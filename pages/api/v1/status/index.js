@@ -11,7 +11,6 @@ async function status(request, response) {
   );
   const databaseMaxConnectionsValue =
     databaseMaxConnectionsResult.rows[0].max_connections;
-  console.log(databaseMaxConnectionsValue);
 
   //* const databaseName = "local_db";
   const databaseName = process.env.POSTGRES_DB;
