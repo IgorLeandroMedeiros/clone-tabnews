@@ -13,7 +13,11 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watchAll --runInBand",
     "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
-    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development  up"
+    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development  up",
+    "curl:delete": "curl -s -X DELETE https://clone-tabnews-git-fix-migrations-endpoint-igtags-projects.vercel.app/api/v1/migrations | python3 -m json.tool",
+    "curl:patch": "curl -s -X PATCH https://clone-tabnews-git-fix-migrations-endpoint-igtags-projects.vercel.app/api/v1/migrations | python3 -m json.tool",
+    "curl:put": "curl -s -X PUT https://clone-tabnews-git-fix-migrations-endpoint-igtags-projects.vercel.app/api/v1/migrations | python3 -m json.tool",
+    "curl:notAllowed": "npm run curl:delete && npm run curl:patch && npm run curl:put"
   },
   "repository": {
     "type": "git",
